@@ -1,0 +1,88 @@
+fields:
+    title:
+        label: 'rainlab.blog::lang.post.title'
+        span: left
+        placeholder: 'rainlab.blog::lang.post.title_placeholder'
+        type: text
+    slug:
+        label: 'rainlab.blog::lang.post.slug'
+        span: right
+        placeholder: 'rainlab.blog::lang.post.slug_placeholder'
+        preset:
+            field: title
+            type: slug
+        type: text
+    author:
+        label: 作者
+        span: auto
+        placeholder: 'rainlab.blog::lang.blog.author'
+        default: 佚名
+        type: text
+    toolbar:
+        type: partial
+        path: post_toolbar
+        cssClass: collapse-visible
+secondaryTabs:
+    fields:
+        content:
+            tab: 'rainlab.blog::lang.post.tab_edit'
+            type: RainLab\Blog\FormWidgets\BlogMarkdown
+            cssClass: 'field-slim blog-post-preview'
+            stretch: true
+            mode: split
+        categories:
+            tab: 'rainlab.blog::lang.post.tab_categories'
+            type: relation
+            commentAbove: 'rainlab.blog::lang.post.categories_comment'
+            placeholder: 'rainlab.blog::lang.post.categories_placeholder'
+        recommend:
+            label: 'rainlab.blog::lang.post.recommend'
+            span: left
+            type: number
+            tab: 'rainlab.blog::lang.post.tab_manage'
+        published:
+            tab: 'rainlab.blog::lang.post.tab_manage'
+            label: 'rainlab.blog::lang.post.published'
+            span: left
+            type: checkbox
+        published_at:
+            tab: 'rainlab.blog::lang.post.tab_manage'
+            label: 'rainlab.blog::lang.post.published_on'
+            span: left
+            cssClass: checkbox-align
+            type: datepicker
+            mode: date
+            trigger:
+                action: enable
+                field: published
+                condition: checked
+        is_top:
+            label: 置顶
+            span: left
+            default: '0'
+            type: number
+            tab: 'rainlab.blog::lang.post.tab_manage'
+        abstract:
+            label: 'rainlab.blog::lang.post.abstract'
+            size: small
+            span: left
+            type: textarea
+            tab: 'rainlab.blog::lang.post.tab_manage'
+        excerpt:
+            label: 'rainlab.blog::lang.post.excerpt'
+            size: small
+            span: left
+            type: textarea
+            tab: 'rainlab.blog::lang.post.tab_manage'
+        featured_images:
+            label: 'rainlab.blog::lang.post.featured_images'
+            mode: image
+            imageWidth: 200
+            imageHeight: 200
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: left
+            type: fileupload
+            tab: 'rainlab.blog::lang.post.tab_manage'

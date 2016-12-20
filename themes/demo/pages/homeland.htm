@@ -1,0 +1,71 @@
+title = "创业家园"
+url = "/homeland"
+layout = "default"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = ":sulg"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = 404
+postPage = "article"
+==
+{% put head %}
+        <link href="/themes/demo/assets/css/homeland.css" rel="stylesheet">
+    {% endput %}
+    <div class="container" style="width: 650px;position: relative;">
+        {% partial "header" %}   
+        <div class="left-nav shadow">
+           <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <a href="#collapseOne" data-toggle="collapse" data-parent="#accordion">
+                                创业家园
+                            </a>
+                        </h3>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <ul>
+                                <li><a href="">线上课堂</a></li>
+                                <li><a href="">创业俱乐部</a></li>
+                                <li><a href="">创业论坛</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul>
+         {% for post in posts %}
+            <li class="media  shadow">
+                {% if post.featured_images.count %}
+                    <img
+                    data-src="{{ image.filename }}"
+                    src="{{ post.featured_images[0].path }}"
+                    alt="{{ image.description }}"
+                    class="media-object pull-left" 
+                    height="105" width="105"
+                    />
+                {% endif%} 
+                <div class="media-body">
+                    <h5><a class="media-heading" href="{{ post.url }}">{{post.title}}{{post.author}}</a></h5>     
+                    <div>
+                        {{ post.summary}} 
+                    </div>  
+                </div>  
+            </li>
+         {% endfor %}
+        </ul>
+        {% if posts.lastPage > 1 %}   
+            <div class="right">
+                  <a>下一页</a>
+                  <b>|</b>
+                  <a>共{{posts.lastPage}}页</a>
+            </div>
+        {% endif %}
+       {% partial "footer" %}
+    </div>

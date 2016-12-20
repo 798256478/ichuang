@@ -1,0 +1,23 @@
+[builderList]
+modelClass = "Acme\Guide\Models\Content"
+scope = "-"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+recordsPerPage = 6
+pageNumber = "{{ :page }}"
+sortColumn = "hot"
+sortDirection = "desc"
+==
+<div>
+            <h3>热门园区排行榜</h3>
+            <ul>
+                {% for record in records%}
+                           <div>
+                               <h4><a href="/yuanqu/{{record.slug}}">{{record.title}}</a></h4>
+                               <img src="{{record.image[0].path}}" alt="" width="199px" height="120px">
+                           </div>
+                {% endfor %}
+            </ul>
+        </div>

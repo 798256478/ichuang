@@ -1,0 +1,40 @@
+fields:
+    title:
+        label: 'acme.guide::lang.content.title'
+        span: auto
+        type: text
+    slug:
+        label: 'acme.guide::lang.content.slug'
+        span: auto
+        type: text
+    parameter:
+        label: 'acme.guide::lang.content.parameter'
+        span: full
+        size: large
+        type: richeditor
+tabs:
+    fields:
+        image:
+            label: 'acme.guide::lang.content.image'
+            mode: image
+            imageWidth: '200'
+            imageHeight: '200'
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: 'Tab 1'
+        short_introduce:
+            label: 'acme.guide::lang.content.short_introduce'
+            size: large
+            span: full
+            type: textarea
+            tab: 'Tab 1'
+        introduce:
+            label: 'acme.guide::lang.content.introduce'
+            span: full
+            size: large
+            type: richeditor
+            tab: 'Tab 1'

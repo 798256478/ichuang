@@ -1,0 +1,71 @@
+/*推荐阅读样式文件*/
+
+.container-hot-list{
+    height:100%;
+    padding-top:30px;
+    border-left: 1px solid #eee;
+    background: #fafafa;
+}
+
+.hot-list-fixed{
+    position: fixed;
+    top:0;
+    z-index: 100;
+    height:103%;
+}
+
+.hot-list .list-h3{
+    margin: 12px 0 30px 10px;
+}
+
+.hot-list .one-hot-article{
+    margin: 22px 0 2px 8px;
+}
+
+.hot-list .one-hot-article-title{
+    width:250px ;
+    margin-top: 10px;
+}
+
+.hot-list .list-number{
+    float: left;
+    width: 18px;
+    height: 18px;
+    margin-top: 1px;
+    line-height: 18px;
+    text-align: center;
+    border-radius: 10px;
+    color: floralwhite;
+    font-weight: bold;
+    background-color: yellowgreen;
+}
+
+.hot-list .list-title{
+    float: left;
+    width: 220px;
+    margin-left: 10px;
+}
+
+.hot-list .list-title  a{
+    display: block;
+    width: 210px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #757575;
+    font-size: 16px;
+}
+
+.hot-list .list-title  a:hover{
+    color: #00c9ff;
+}
+
+.hot-list .one-hot-article-date{
+    font-size: 15px;
+    margin:8px 28px;
+    color: #999;
+}
+
+.hot-list ol{
+    list-style-type: circle;
+}

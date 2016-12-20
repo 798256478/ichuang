@@ -1,0 +1,59 @@
+title = "双创资讯"
+url = "/information/:category?message"
+layout = "default"
+is_hidden = 0
+
+[blogPosts posts]
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc,created_at desc"
+categoryPage = 404
+postPage = 404
+
+[blogCategories category]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = 404
+==
+function onStart(){
+    $this->addCss('assets/css/information.css');
+
+    $this->addJs('assets/javascript/information.js');
+    $this['sort']='pv';
+}
+function onScroll(){
+}
+function onInit(){
+    $this['is_message']=strpos($_SERVER['REQUEST_URI'],'message');
+}
+==
+<!--页面正文-->
+
+ <div class="content">
+     <!--文章列表-->
+     <div class="information">
+         <div class="second-menu">
+             {% component 'category' %}
+         </div>
+         <div class="article-list" id="autoload">
+             {% if is_message %}
+             {% partial 'posts/default'  %}
+             {% else %}
+             {% partial 'posts/all' %}
+             {% endif %}
+         </div>
+
+         <div class="more " id="more">
+             <a>加载更多</a>
+         </div>
+
+     </div>
+     <!--文章列表完-->
+     <!--推荐阅读列表-->
+        {% partial 'posts::hotList'  %}
+     <!--推荐阅读列表完-->
+     <div class="clear"></div>
+
+ </div>
+
+<!--页面正文完-->

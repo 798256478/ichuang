@@ -1,0 +1,58 @@
+[blogPosts indexposts]
+postsPerPage = 6
+noPostsMessage = "No posts found"
+sortOrder = "created_at desc"
+categoryPage = 404
+postPage = 404
+==
+function onEnd(){
+    foreach($this['posts'] as $post)
+{
+
+        $post->content_html=explode('<p><img',$post->content_html,2);
+        $post->content_html=explode('/>',$post->content_html[1],2);
+        $post->content_html=$post->content_html[0];
+        $post->content_html='<img '.$post->content_html;
+        $post->content_html=$post->content_html.'/>';
+    }
+}
+==
+<ul>
+        {% for post in posts %}
+        <li>
+            <div class="index-article">
+                <div class="article-title">
+                    <a href="{{url()}}/article/{{post.slug}}">{{post.title}}</a>
+                </div>
+
+                <div class="article-img ">
+                    {{post.content_html|raw}}
+                </div>
+                <div class="article-content">
+                    <div class="article-data ">
+                        <p>{{post.created_at}}</p>
+                    </div>
+                    <div class="article-abstract ">
+                        <p>
+                            {{post.abstract}}
+                        </p>
+                    </div>
+                </div>
+
+
+<!--<div class="col-sm-11">-->
+<!--<p>{{post.create_at}}</p>-->
+<!--<a href="{{url()}}/article/{{post.slug}}" class="pull-right">详细</a>-->
+<!--</div>-->
+                <div class="clear"></div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+{% if post('number') %}
+{% if posts[5] == null %}
+<div class="no-more" id="no-more">
+    <p>没有更多了</p>
+</div>
+{% endif %}
+{% endif %}

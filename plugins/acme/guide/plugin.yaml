@@ -1,0 +1,24 @@
+plugin:
+    name: 'acme.guide::lang.plugin.name'
+    description: 'acme.guide::lang.plugin.description'
+    author: acme
+    icon: oc-icon-map-marker
+    homepage: ''
+permissions:
+    acme.guide.manage_content:
+        tab: 'acme.guide::lang.plugin.name'
+        label: 'acme.guide::lang.content.manage_contents'
+navigation:
+    guide:
+        label: 园区向导
+        url: acme/guide/content
+        icon: icon-life-ring
+        permissions:
+            - acme.guide.manage_content
+        sideMenu:
+            contents:
+                label: 园区
+                url: acme/guide/content
+                icon: icon-sitemap
+                permissions:
+                    - acme.guide.manage_content

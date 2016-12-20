@@ -1,0 +1,164 @@
+.article{
+    min-height:800px;
+    position:relative;
+}
+
+.yuanqu-left{
+    width:70%;
+    padding-right:20px;
+    padding-top:30px;
+}
+
+.row .col-md-5{
+    width:47%;
+    margin-left:20px;
+}
+
+.row .col-md-5 .short_intro{
+    max-height:180px;
+    margin-top:10px;
+    overflow:hidden;
+    font-size:14px;
+}
+
+.row .col-md-5 p{
+    color:#999;
+}
+
+.row .col-md-5 span{
+    color:#ff6464;
+    font-weight:bolder;
+}
+
+.row .col-md-5 button{
+    margin-top:20px;
+}
+
+.desc{
+    min-height:600px;
+    margin-top:20px;
+}
+
+.desc .navbar{
+    min-height:40px;
+    margin:0 0;
+}
+
+.navbar-default{
+    height:40px;
+    width:637px;
+}
+
+.navbar-default .navbar-nav{
+    margin:0 0;
+}
+
+.nav>.active>a{
+    height:38px;
+}
+
+.section{
+    min-height:140px;
+    padding-top:5px;
+}
+
+.section table{
+    width:100%;
+}
+
+.section table tr{
+    padding:10px 0;
+    border-bottom:1px dashed #aaa;
+}
+
+.section table tr td{
+    padding:10px 0;
+}
+
+.section table tr td:nth-child(odd){
+    width: 100px;
+    padding: 0 5px 0 12px;
+    line-height:30px;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    color: #999;
+}
+
+.section table tr td:nth-child(even){
+    width: 200px;
+    table-layout: fixed;
+    word-break: break-all;
+    line-height: 30px;
+    overflow: hidden;
+}
+
+.section h4{
+    height:40px;
+    padding-left:10px;
+    line-height:40px;
+    border-radius:4px;
+    background:#f8f8f8;
+}
+
+ #intro p{
+    margin:10px 10px;
+    text-indent:4ex;
+    line-height:30px;
+}
+
+.tab-pane{
+    padding:20px 0;
+}
+
+.yuanqu-right{
+    position:absolute;
+    top:0;
+    right:0;
+    width: 260px;
+    /*height:755px;*/
+    height:100%;
+    padding:20px 5px;
+    overflow:hidden;
+    border-left:1px solid #eee;
+    background:#fafafa;
+}
+
+.yuanqu-right h3{
+    margin: 9px 0 25px 25px;
+}
+
+.yuanqu-right div{
+    position:relative;
+    width: 250px;
+    min-height: 80px;
+    margin-bottom:30px;
+    line-height: 40px;
+}
+
+
+.yuanqu-right h4{
+    position: absolute;
+    bottom: 5px;
+    left: 35px;
+    opacity: 0.9;
+    width: 200px;
+    text-align: center;
+    margin-left: -10px;
+}
+
+.yuanqu-right h4 a{
+    color:#fff;
+}
+
+.yuanqu-right h4 a:hover{
+    color:#00c9ff;
+}
+
+
+.yuanqu-right div img{
+    margin-left:25px;
+}
+

@@ -1,0 +1,24 @@
+plugin:
+    name: 'acme.serve::lang.plugin.name'
+    description: 'acme.serve::lang.plugin.description'
+    author: acme
+    icon: oc-icon-shopping-cart
+    homepage: ''
+navigation:
+    serve:
+        label: 双创服务
+        url: acme/serve/shops
+        icon: icon-align-left
+        permissions:
+            - acme.serve.manage_shop
+        sideMenu:
+            shops:
+                label: 服务
+                url: acme/serve/shops
+                icon: icon-shopping-cart
+                permissions:
+                    - acme.serve.manage_shop
+permissions:
+    acme.serve.manage_shop:
+        tab: 'acme.serve::lang.plugin.name'
+        label: 'acme.serve::lang.shop.manage_shops'

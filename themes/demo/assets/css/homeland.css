@@ -1,0 +1,24 @@
+.media{
+	margin-bottom: 30px;
+	background: rgb(231,226,230);
+}
+
+.media-object{
+	margin: 10px;
+}
+
+.media-body{
+	padding:10px;
+}
+
+.media-body div{
+	height: 77px;
+	margin: 10px 0 0px;
+	text-indent: 2em;
+    overflow: hidden;
+}
+
+.right{
+	margin:20px 0px 0px 455px;
+}
+

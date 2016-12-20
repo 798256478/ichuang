@@ -1,0 +1,63 @@
+[blogCategories category]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "blog/category"
+==
+<header>
+  <div class="header-container">
+      <nav class="navbar" role="navigation" id="fixed-header">
+        <div class="navbar-header">
+          <img src="/themes/demo/assets/images/LOGO3.jpg" alt="" height="66px" width="125px">
+        </div>
+        <div>
+          <ul class="nav navbar-nav">
+            <li class=""><a href="/">首页</a></li>
+            <li class="dropdown">
+              <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">双创资讯
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                {% for category in categories %}
+                  <li >
+                    <a href="{{url()}}/information/{{category.slug}}">{{category.name}}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </li>
+            <li class="dropdown"><a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">双创服务
+              <b class="caret"></b>
+            </a>
+              <ul class="dropdown-menu">
+                <li><a href="/serve">一站式服务</a></li>
+                <li><a href="javascript:void(0)">资金申报（测试中）</a></li>
+                <li><a href="javascript:void(0)">会员中心（测试中）</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">园区向导
+              <b class="caret"></b>
+            </a>
+              <ul class="dropdown-menu">
+                <li><a href="/guide">特色园区</a></li>
+                <li><a href="javascript:void(0)">联系我们（测试中）</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">创业家园
+              <b class="caret"></b>
+            </a>
+              <ul class="dropdown-menu">
+                <li><a href="/forum/forum.php">创业俱乐部（测试中）</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="clear"></div>
+        </div>
+      </nav>
+  </div>
+</header>
+<script>
+    $(".dropdown").hover(function(){
+        $(this).addClass('open');
+    },function(){
+        $(this).removeClass("open");
+    })
+</script>

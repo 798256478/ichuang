@@ -1,0 +1,44 @@
+[blogPosts autoposts]
+categoryFilter = "{{ :category }}"
+postsPerPage = 6
+noPostsMessage = "No posts found"
+sortOrder = "created_at desc"
+categoryPage = 404
+postPage = 404
+==
+function onStart(){
+
+
+}
+==
+{% for post in posts %}
+<div class="one-article ">
+
+    <div class="one-article-title">
+        <a href="{{url()}}/article/{{post.slug}}">{{post.title}}</a>
+    </div>
+    <div class="one-article-author">
+        {{post.author}}
+    </div>
+    <div class="one-article-date">
+        {{post.created_at}}
+    </div>
+    <div class="clear"></div>
+    <div class="one-article-abstract">
+        {{post.abstract}}
+    </div>
+    <div class="one-article-img">
+        {{post.content_html|raw}}
+    </div>
+
+
+</div>
+{% else %}
+    <!--<div>{{noPostsMessage}}</div>-->
+{% endfor%}
+
+{% if posts[post('number')-1] == null %}
+<div class="no-more" id="no-more">
+    <p>没有更多了</p>
+</div>
+{% endif %}

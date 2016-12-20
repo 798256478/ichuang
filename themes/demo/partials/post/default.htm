@@ -1,0 +1,21 @@
+==
+<div class="article">
+    <div class="article-title">
+        <h1>{{ post.title }}</h1>
+    </div>
+    <div class="titleBar">
+            <span class="article-author">{{post.author}}</span>
+            <span class="article-author">{{post.created_at}}</span>
+    </div>   
+    <div class="clear"></div>
+    <div class="article-summary">
+        <strong>[文章摘要]</strong>{{post.abstract}}
+    </div>
+    <div class="article-text">
+
+            {{ post.content_html |raw}}
+
+    </div>
+    <div class="clear"></div>
+
+</div>

@@ -1,0 +1,107 @@
+h1, h2, h3, h4, h5, h6{
+	margin-bottom: 10px !important;
+	margin-top: 20px !important;
+
+}
+
+.article-text p{
+	margin: 10px 7px 10px !important;
+	line-height:30px;
+	text-indent:2em;
+	font-size: 15px;
+}
+
+.article-text .img_title{
+    text-align:center;
+}
+
+.article-text h4{
+    text-align:center;
+}
+
+.article-text h5{
+   font-size:12px;
+}
+
+
+.article-text .right{
+    text-align:right;
+}
+
+.article-text .bg_title span{
+    text-align:center;
+}
+
+
+/*布局*/
+.content{
+	width: 940px;
+	margin: 0 auto;
+	position:relative;
+}
+
+.content .article-content{
+	float: left;
+	width: 70%;
+	margin-right: 20px;
+}
+
+.content .hot-list{
+    position:absolute;
+	float: left;
+	width: 260px;
+	right:0;
+	height:101%;
+}
+/*布局完*/
+/*文章*/
+.article{
+	width: 100%;
+
+}
+
+.article .titleBar{
+    text-align: center;
+    color: #848484;
+    margin-top: 7px;
+    padding: 0 10px;
+}
+
+.article .article-title{
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.article .article-author{
+	margin-left: 10px;
+}
+
+.article .article-date{
+	margin-left: 20px;
+}
+
+.article .article-summary{
+	margin:10px 0;
+	padding:15px;
+	color: #666;
+	border: 1px solid #E5E5E5;
+	background:#FBFBFB;
+}
+
+
+.article .article-text{
+	margin-top: 10px;
+	padding: 10px 20px;
+}
+
+.article img{
+	display: block;
+	max-width: 100%;
+	margin: 10px auto;
+}
+
+/*文章完*/
+
+.hot-list-fixed{
+	position: static !important;
+}

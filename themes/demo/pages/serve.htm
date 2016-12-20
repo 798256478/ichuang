@@ -1,0 +1,119 @@
+title = "双创服务"
+url = "/serve"
+layout = "default"
+is_hidden = 0
+
+[builderList]
+modelClass = "Acme\Serve\Models\Shop"
+scope = "-"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "information"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+recordsPerPage = 5
+pageNumber = "{{ :page }}"
+==
+<?php
+function onInit(){
+    $this['time']=date('Y-m-d h:i:s',time());
+}
+?>
+==
+{% put head %}
+        <link href="/themes/demo/assets/css/serve.css" rel="stylesheet">
+{% endput %}
+<div class="article">
+    <div class="serve-left">
+        <ul id="mytab" class="nav nav-tabs">
+            <li class="active">
+            <a href="#serve" data-toggle="tab">
+                一站式服务
+            </a>
+            </li>
+            <li><a href="#report" data-toggle="tab">
+                资金申报
+            </a>
+            </li>
+            <li><a href="#user" data-toggle="tab">
+                会员中心
+            </a>
+            </li>
+        </ul>
+        <!--标签页内容-->
+        <div id="myTabContent" class="tab-content" >
+            <div class="tab-pane fade in active" id="serve">
+                <div id="content">
+                    {% for record in records %}
+                        <div class="serve-list">
+                            <img src="{{record.image[0].path }}" alt="" height="132px" width="181px">
+                            <h3><a href="/combo/{{record.slug}}">{{record.title}}</a></h3>
+                            <span>￥{{record.price}}</span>
+                            <p>{{record.short_descript}}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="more">
+                   <a data-request="builderList::onPage" data-request-data="number:[getlength(),'serve']" id="getmore" data-request-success="Page(data)">加载更多</a> 
+                </div>
+            </div>
+             
+            <div class="tab-pane fade" id="report">
+                
+            </div>
+            <div class="tab-pane fade" id="user">
+                
+            </div>
+        </div>
+    </div>
+    <div class="serve-right">
+        {% partial "serve/right" %}
+    </div>
+</div>
+<script>
+    window.onload=function(){$(window).scroll(function(){
+        　　var scrollTop = $(this).scrollTop();
+        　　var scrollHeight = $(document).height();
+        　　var windowHeight = $(this).height();
+        　　
+        　　
+        　　if(scrollTop + windowHeight >= scrollHeight-0.9&&$("#mytab li").eq(0).hasClass('active')){
+        　　　　$("#getmore").click();
+        　　　　$("#getmore").html("<img src='/themes/demo/assets/images/load.jpg' alt='' height='80px' width='100px' style='margin:-30px'>");
+        　　　　$("#getmore").parent().css("background","#fff");
+        　　}
+            if($(this).scrollTop()>100){
+                $('#mytab').css("position","fixed");
+                $('#mytab').css("top","0");
+                $('#mytab').css("width","643px");
+            }
+            else{
+                $('#mytab').css("position","");
+                $('#mytab').css("width","");
+            }
+        });
+        
+    }
+    function Page(data){
+        eval("var records="+data['result']);
+        if(records.length){
+            for(var n in records)
+            {
+                var str=records[n].disk_name;
+                var first_path=str.substr(0,3);
+                var second_path=str.substr(3,3);
+                var third_path=str.substr(6,3);
+                $("#content").append("<div class='serve-list'><img src='/storage/app/uploads/public/"+first_path+"/"+second_path+"/"+third_path+"/"+str+"' alt='' height='132px' width='181px'><h3><a href='/combo/"+records[n].slug+"'>"+records[n].title+"</a></h3><span>￥"+records[n].price+"</span><p>"+records[n].short_descript+"</p></div>");
+            }
+            $('#getmore').html("加载更多");
+            $("#getmore").parent().css("background","#DAE8FE");
+        }
+        else{
+            $('#getmore').html("没有更多了");
+            $("#getmore").parent().css("background","#DAE8FE");
+        }
+    }
+    function getlength(){
+        return $('.serve-list').length;
+    }
+</script>

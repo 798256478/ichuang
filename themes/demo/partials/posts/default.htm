@@ -1,0 +1,49 @@
+[blogPosts autoposts]
+postsPerPage = 6
+noPostsMessage = "No posts found"
+sortOrder = "is_top desc,created_at desc"
+categoryPage = 404
+postPage = 404
+==
+<?php
+function onEnd(){
+    foreach($this['posts'] as $post){
+    $post->content_html=explode('<p><img',$post->content_html,2);
+    $post->content_html=explode('/>',$post->content_html[1],2);
+    $post->content_html=$post->content_html[0];
+    $post->content_html='<img '.$post->content_html;
+    $post->content_html=$post->content_html.'/>';
+    }
+}
+?>
+==
+{% for post in posts %}
+<div class="one-article ">
+
+    <div class="one-article-title">
+        <a href="{{url()}}/article/{{post.slug}}">{{post.title}}</a>
+    </div>
+    <div class="one-article-author">
+        {{post.author}}
+    </div>
+    <div class="one-article-date">
+        {{post.created_at}}
+    </div>
+    <div class="clear"></div>
+    <div class="one-article-abstract">
+        {{post.abstract}}
+    </div>
+    <div class="one-article-img">
+        {{post.content_html|raw}}
+    </div>
+</div>
+{% endfor%}
+
+{% if post('number') %}
+{% if posts[5] == null %}
+
+<div class="no-more " id="no-more">
+    <p>没有更多了</p>
+</div>
+{% endif %}
+{% endif %}

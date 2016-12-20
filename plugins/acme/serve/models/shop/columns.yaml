@@ -1,0 +1,15 @@
+columns:
+    title:
+        label: 'acme.serve::lang.shop.title'
+        type: text
+        searchable: true
+        sortable: true
+    price:
+        label: 'acme.serve::lang.shop.price'
+        type: number
+        searchable: true
+    slug:
+        label: 'acme.serve::lang.shop.slug'
+        type: text
+        searchable: true
+        sortable: true

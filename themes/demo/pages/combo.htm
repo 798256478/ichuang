@@ -1,0 +1,130 @@
+title = "套餐"
+url = "/combo/:slug"
+layout = "default"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "Acme\Serve\Models\Shop"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "title"
+notFoundMessage = "Record not found"
+
+[builderList]
+modelClass = "Acme\Serve\Models\Shop"
+scope = "-"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "combo"
+detailsKeyColumn = "title"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+==
+<?php
+function onInit(){
+    $this['time']=date('Y-m-d h:i:s',time());
+}
+?>
+==
+{% put head %}
+        <link href="/themes/demo/assets/css/combo.css" rel="stylesheet">
+{% endput %}
+<div class="article">
+    <div class="combo-left">
+         <div class="row">
+         	<div class="col-md-6">
+         		<img src="{{record.image[0].path}}" alt="" height="155px" width="338px">
+         	</div>
+         	<div class="col-md-5">
+         		<h3>{{record.title}}</h3>
+         		<div class="short_intro"><p>{{record.short_descript}}</p></div>
+        		<p>价格：<span>￥{{record.price}}元</span></p>
+        		<button class="btn btn-success">联系我们</button>
+         	</div>
+         </div>
+         <div class="desc">
+             <nav id="myScrollspy" class="navbar navbar-default" role="navigation">
+              <ul class="nav navbar-nav">
+                <li>
+                <a href="#intro">
+                    服务介绍
+                </a>
+                </li>
+                <li><a href="#talk">
+                    用户评价
+                </a>
+                </li>
+                <li><a href="#question">
+                    常见问题
+                </a>
+                </li>
+                <li><a href="#about">
+                    关于我们
+                </a>
+                </li>
+              </ul>
+            </nav>
+            <!--标签页内容-->
+            <div id="myTabContent" class="tab-content" >
+                <div class="section" id="intro">
+                   {{record.introduce|raw}}
+                </div>
+                <div class="section" id="talk">
+                    <h4>用户评价</h4>
+                </div>
+                <div class="section" id="question">
+                    <h4>常见问题</h4>
+                </div>
+                <div class="section" id="about">
+                    <h4>关于我们</h4>
+                </div>
+            </div>
+         </div>
+    </div>
+    <div class="combo-right">
+        <div>
+                <h3>热门业务</h3>
+                <ul>
+                    {% for record in records%}
+                        {% if record.ishot == 1 %}
+                            <li><span class="col-sm-1">〇</span><a href="/combo/{{record.slug}}" class="col-sm-8">{{record.title}}</a><span class="col-sm-3">￥{{record.price}}</span></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div>
+                <h3>限时优惠</h3>
+                <ul>
+                    {% for record in records%}
+                        {% if time<record.privilege %}
+                            <li><span class="col-sm-1">〇</span><a href="/combo/{{record.slug}}" class="col-sm-8">{{record.title}}</a><span class="col-sm-3">￥{{record.price}}</span></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div>
+                <h3>推荐套餐</h3>
+                <ul>
+                    {% for record in records%}
+                        {% if record.isrecommend %}
+                            <li><span class="col-sm-1">〇</span><a href="/combo/{{record.slug}}" class="col-sm-8">{{record.title}}</a><span class="col-sm-3">￥{{record.price}}</span></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+    </div>
+</div>
+<script>
+ window.onload=function(){$(window).scroll(function(){
+            if($(this).scrollTop()>300){
+                $('#myScrollspy').css("position","fixed");
+                $('#myScrollspy').css("top","0");
+                $('#myScrollspy').css("width","637px");
+            }
+            else{
+                $('#myScrollspy').css("position","");
+                $('#myScrollspy').css("width","");
+            }
+        });
+    }
+</script>

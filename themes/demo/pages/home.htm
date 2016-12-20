@@ -1,0 +1,138 @@
+title = "首页"
+url = "/"
+layout = "default"
+is_hidden = 0
+
+[blogPosts posts]
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+
+[builderList]
+modelClass = "Acme\Serve\Models\Shop"
+scope = "-"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+recordsPerPage = 6
+pageNumber = "{{ :page }}"
+
+[builderList builderList2]
+modelClass = "Acme\Guide\Models\Content"
+scope = "-"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+recordsPerPage = 6
+pageNumber = "{{ :page }}"
+==
+function onStart(){
+$this->addJs('assets/javascript/home.js');
+$this->addCss('assets/css/home.css');
+}
+function onScroll(){
+
+}
+==
+<!--轮播图-->
+        <div id="myCarousel" class="carousel slide">
+           <!-- 轮播（Carousel）指标 -->
+           <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+              <li data-target="#myCarousel" data-slide-to="3"></li>
+           </ol>   
+           <!-- 轮播（Carousel）项目 -->
+           <div class="carousel-inner">
+              <div class="item active">
+                 <a href=""><img src="/themes/demo/assets/images/home.jpg" alt=""></a>
+              </div>
+              <div class="item">
+                 <a href=""><img src="/themes/demo/assets/images/home.jpg" alt=""></a>
+              </div>
+              <div class="item">
+                 <a href=""><img src="/themes/demo/assets/images/home.jpg" alt=""></a>
+              </div>
+              <div class="item">
+                 <a href=""><img src="/themes/demo/assets/images/home.jpg" alt=""></a>
+              </div>
+           </div>
+        </div> 
+<!--轮播图完-->
+
+<div class="article">
+    <div class="left" >
+        <div id="autoload">
+        {% partial "posts/indexList" %}
+        </div>
+        <div class="clear"></div>
+        <div class="more " id="more">
+            <a>加载更多</a>
+        </div>
+    </div>
+
+    
+    <div class="right">
+        <div class="hot-invitation">
+            <div class="invitation-container">
+                <div class="invitation-header">
+                    <p>双创服务</p>
+                </div>
+                <div class="invitation-list">
+                    <ul>
+                        {% for record in builderList.records%}
+                                <li><a href="/combo/{{record.slug}}">{{record.title}}</a><span>￥{{record.price}}</span></li>
+                        {% endfor %}
+                    </ul>
+                    <a href="/serve" class="right"><img src="/themes/demo/assets/images/more.jpg" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <div class="hot-invitation">
+            <div class="invitation-container">
+                <div class="invitation-header">
+                    <p>园区向导</p>
+                </div>
+                <div class="invitation-list">
+                    <ul>
+                        {% for record in builderList2.records%}
+                            <li><a href="/yuanqu/{{record.slug}}">{{record.title}}</a></li>
+                        {% endfor %}
+                   </ul>
+                   <a href="/guide" class="right"><img src="/themes/demo/assets/images/more.jpg" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <div class="hot-invitation">
+            <div class="invitation-container">
+                <div class="invitation-header">
+                    <p>创业家园</p>
+                </div>
+                <div class="invitation-list guide_list">
+                    <ul>
+                    <script type="text/javascript" src="http://www.shanjing.com/forum/api.php?mod=js&bid=4"></script>
+                    </ul>
+                    <a href="/forum/forum.php" class="right"><img src="/themes/demo/assets/images/more.jpg" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+
+</div>
+
+<div class="clear"></div>
+{% put bodyjs %}
+<script type="text/javascript">
+    $(function(){
+			$("#myCarousel").carousel({
+				interval:5000
+			});
+		})
+</script>
+{% endput %}

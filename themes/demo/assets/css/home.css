@@ -1,0 +1,184 @@
+.carousel-indicators{
+	margin:-10px 110px;
+}
+
+
+#myCarousel img{
+    height:276px;
+    width:937px;
+}
+
+
+/*文章列表*/
+.article{
+	min-height: 1206px;
+	margin-top: 20px;
+}
+
+.left{
+	width:70%;
+	float: left;
+}
+
+.left li{
+    padding: 5px 0;
+	border-top: 1px solid #eee;
+}
+
+.left li:nth-child(1){
+	border-top: 0;
+}
+
+
+.col-sm-11{
+	margin-top: 10px;
+}
+
+.left .index-article{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+
+.left li:hover{
+	background-color: #f3f9fe;
+}
+
+.left .index-article .article-title{
+	margin-top: 7px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+}
+
+
+.left .index-article .article-title a{
+	font-size: 25px;
+}
+
+.left .index-article .article-img{
+	float: left;
+	margin-left: 20px;
+}
+
+.left .index-article .article-img img{
+	width: 188px;
+	height: 130px;
+}
+
+.index-article .article-content{
+	float: left;
+	width: 414px;
+	margin-left: 20px;
+	color: #D1D1D1;
+	overflow: hidden;
+}
+
+.index-article .article-content .article-abstract{
+	max-height:95px;
+	margin-top: 15px;
+	color: #999;
+}
+
+
+.no-more,.more{
+	width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    line-height: 40px;
+    font-size: 15px;
+    text-align: center;
+    color:#666;
+    background-color: #DAE8FE;
+}
+
+/*文章列表完*/
+
+.right{
+	float:right;
+}
+
+/*.right div{*/
+    /*width: 310px;*/
+    /*height: 260px;*/
+    /*margin: 0 0 20px 0;*/
+    /*border: 1px solid #000;*/
+/*}*/
+/*图片切换*/
+
+
+
+/*图片切换完*/
+/*热门帖子*/
+.hot-invitation{
+	width: 260px;
+	height: 300px;
+	margin-bottom:20px;
+	border-top:2px solid #188eee;
+}
+
+.hot-invitation .invitation-header{
+	height: 54px;
+	margin-top:-3px;
+	padding:10px 0;
+	border-top:4px solid #fc6c0d;
+	text-align: center;
+	font-size: 20px;
+	line-height: 40px;
+	color: #575757;
+	float: left;
+
+}
+.hot-invitation .invitation-place{
+	float: left;
+	width: 140px;
+	height: 40px;
+	margin-top: 3px;
+
+}
+
+.hot-invitation .invitation-list{
+    position:relative;
+	margin-left: 3px;
+	margin-bottom: 3px;
+	margin-right: 3px;
+	height: 252px;
+	float: left;
+	width: 262px;
+}
+
+.hot-invitation .invitation-list li{
+    margin: 15px -15px;
+    background: url("/themes/demo/assets/images/enter.jpg") 15px -8px no-repeat;
+}
+
+.hot-invitation .invitation-list li span{
+    display:inline-block;
+    width:15%;
+    text-align:center;
+    position: relative;
+    top: -5px;
+}
+
+.hot-invitation .invitation-list li a{
+    display:inline-block;
+    width:65%;
+    margin-left:30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.hot-invitation .guide_list li a {
+	width:80%;
+}
+
+.right div .right{
+    position: absolute;
+    right: 10px;
+    top:-31px;
+    font-size: 12px;
+}
+
+.right div img{
+    height:12px;
+    width:38px;
+}

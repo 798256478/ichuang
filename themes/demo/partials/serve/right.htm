@@ -1,0 +1,29 @@
+[builderList]
+modelClass = "Acme\Serve\Models\Shop"
+scope = "-"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+==
+<div>
+            <h3>热门业务</h3>
+            <ul>
+                {% for record in records%}
+                    {% if record.ishot == 1 %}
+                        <li><span class="col-sm-1">〇</span><a href="/combo/{{record.slug}}" class="col-sm-7">{{record.title}}</a><span class="col-sm-4">￥{{record.price}}</span></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        <div>
+            <h3>限时优惠</h3>
+            <ul>
+               {% for record in records%}
+                    {% if time<record.privilege %}
+                        <li><span class="col-sm-1">〇</span><a href="/combo/{{record.slug}}" class="col-sm-7">{{record.title}}</a><span class="col-sm-4">￥{{record.price}}</span></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>

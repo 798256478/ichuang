@@ -1,0 +1,48 @@
+description = "Default layout"
+==
+<?php
+function onStart()
+{
+    $this->addCss("assets/vendor/bootstrap/dist/css/bootstrap.min.css");
+    $this->addCss("assets/css/common.css");
+    $this->addJs("assets/vendor/jquery/dist/jquery.min.js");
+    $this->addJs("assets/vendor/bootstrap/dist/js/bootstrap.min.js");
+}
+?>
+==
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{{ this.page.title }}</title>
+        <link href="/themes/demo/assets/images/LOGO3.ico" rel="shortcut icon" type="image/x-icon">
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+        <meta name="author" content="OctoberCMS">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="generator" content="OctoberCMS">
+        {% styles %}
+        {% placeholder head %}
+        {% scripts %}
+    </head>
+    <body data-spy="scroll" data-target="#myScrollspy" data-offset="0">
+        <!-- Content -->
+        {% partial "header" %}
+        <div class="container" style="width: 970px;position: relative;">  
+            
+            {% page %}
+            {% partial "footer" %}
+
+        </div>
+
+        <!-- Scripts -->
+        
+        <script src="{{ [
+            'assets/javascript/app.js'
+        ]|theme }}"></script>
+        
+        {% framework extras %}
+        {% placeholder bodyjs %}
+    </body>
+</html>

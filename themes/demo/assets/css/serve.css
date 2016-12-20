@@ -1,0 +1,98 @@
+.article{
+    position:relative;
+    min-height: 800px;
+}
+
+.serve-left{
+    width:70%;
+    padding:30px 15px;
+}
+
+.serve-list{
+    min-height: 132px;
+    margin-bottom: 20px;
+}
+
+.serve-list img{
+    float:left;
+    margin-right: 20px;
+}
+
+.serve-list h3{
+    margin:20px 0;
+}
+
+.serve-list span{
+    color: #ffa01a;
+    font-size:18px;
+    font-weight: 700;
+}
+
+.serve-list p{
+    margin-top: 20px;
+    color:#999;
+}
+
+.more{
+    width:100%;
+    height:50px;
+    text-align: center;
+    line-height:50px;
+    background-color: #DAE8FE;
+}
+
+
+.nav-tabs {
+     border-bottom: 0; 
+}
+
+#mytab{
+    background:#fff;
+}
+
+#mytab li{
+    margin-right:40px;
+}
+
+#mytab a{
+    border:0;
+    color:#555;
+    font-size:18px;
+    background:#fff;
+}
+
+#mytab a:hover{
+   color:cornflowerblue;
+   border-bottom:1px solid cornflowerblue;
+}
+
+#mytab .active a{
+    color:cornflowerblue;
+    border-bottom:4px solid cornflowerblue;
+}
+
+
+
+.serve-right{
+    position:absolute;
+    top:0;
+    right:0 ;
+    width: 260px;
+    height:100%;
+    padding:30px 15px;
+    border-left:1px solid #eee;
+    background:#fafafa;
+}
+
+.serve-right div{
+    width: 250px;
+    height: 250px;
+    margin-bottom:25px;
+    line-height: 40px;
+    overflow:hidden;
+}
+
+.serve-right div h3{
+    margin:10px 2px;
+}
+

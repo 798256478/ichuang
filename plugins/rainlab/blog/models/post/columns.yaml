@@ -1,0 +1,33 @@
+columns:
+    title:
+        label: 'rainlab.blog::lang.post.title'
+        type: text
+        searchable: true
+    slug:
+        label: slug
+        type: number
+    categories:
+        label: 'rainlab.blog::lang.post.categories'
+        type: text
+        searchable: true
+        select: name
+        relation: categories
+    created_at:
+        label: 'rainlab.blog::lang.post.created'
+        type: date
+        invisible: true
+    updated_at:
+        label: 'rainlab.blog::lang.post.updated'
+        type: date
+        invisible: true
+    published_at:
+        label: 'rainlab.blog::lang.post.published'
+        type: date
+    recommend:
+        label: recommend
+        type: number
+        default: '0'
+    is_top:
+        label: top
+        type: number
+        default: '0'

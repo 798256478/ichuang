@@ -1,0 +1,51 @@
+fields:
+    title:
+        label: 'acme.serve::lang.shop.title'
+        span: auto
+        type: text
+    slug:
+        label: 'acme.serve::lang.shop.slug'
+        span: auto
+        type: text
+    price:
+        label: 'acme.serve::lang.shop.price'
+        span: auto
+        type: text
+    privilege:
+        label: 'acme.serve::lang.shop.privilege'
+        mode: datetime
+        span: left
+        type: datepicker
+    short_descript:
+        label: 'acme.serve::lang.shop.short_descript'
+        span: full
+        type: text
+    isrecommend:
+        label: 'acme.serve::lang.shop.isrecommend'
+        span: full
+        type: checkbox
+    ishot:
+        label: 'acme.serve::lang.shop.ishot'
+        span: auto
+        type: checkbox
+tabs:
+    fields:
+        image:
+            label: 'acme.serve::lang.shop.image'
+            mode: image
+            imageWidth: '200'
+            imageHeight: '200'
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            required: 0
+            type: fileupload
+            tab: 'Tab 1'
+        introduce:
+            label: 'acme.serve::lang.shop.introduce'
+            size: large
+            span: full
+            type: richeditor
+            tab: 'Tab 1'

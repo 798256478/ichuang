@@ -1,0 +1,45 @@
+title = "双创"
+url = "/article/:slug"
+layout = "default"
+is_hidden = 0
+
+[blogPost post]
+slug = "{{ :slug }}"
+categoryPage = 404
+
+[blogPosts posts]
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+
+[blogCategories category]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "blog/category"
+==
+function onStart(){
+$this->addCss('assets/css/article.css');
+$this->addJs('assets/javascript/article.js');
+$this['sort']='pv';
+
+
+}
+function onEnd()
+{
+
+
+    if (isset($this['post'])){
+
+    $this->page->title = $this['post']->title;
+    }
+}
+==
+<div class="content">
+    <div class="article-content">
+        {% component 'post' %}
+    </div>
+        {% partial 'posts::hotList' %}
+    <div class="clear"></div>
+</div>

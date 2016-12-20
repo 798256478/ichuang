@@ -1,0 +1,11 @@
+columns:
+    title:
+        label: 'acme.guide::lang.content.title'
+        type: text
+        searchable: true
+        sortable: true
+    slug:
+        label: 'acme.guide::lang.content.slug'
+        type: text
+        searchable: true
+        sortable: true

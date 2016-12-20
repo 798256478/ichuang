@@ -1,0 +1,12 @@
+<?PHP exit;?>	1460508518	admin	1	127.0.0.1	login		44	GET={mod=modcp; fid=44; action=login; }; POST={};
+<?PHP exit;?>	1460508536	admin	1	127.0.0.1	thread		44	GET={mod=modcp; fid=44; action=thread; }; POST={};
+<?PHP exit;?>	1460508548	admin	1	127.0.0.1	thread	post	44	GET={mod=modcp; action=thread; op=post; fid=44; }; POST={};
+<?PHP exit;?>	1460508549	admin	1	127.0.0.1	recyclebin		44	GET={mod=modcp; action=recyclebin; fid=44; }; POST={};
+<?PHP exit;?>	1460508550	admin	1	127.0.0.1	recyclebinpost		44	GET={mod=modcp; action=recyclebinpost; fid=44; }; POST={};
+<?PHP exit;?>	1460508557	admin	1	127.0.0.1	thread	thread	44	GET={mod=modcp; action=thread; op=thread; fid=44; }; POST={};
+<?PHP exit;?>	1460508597	admin	1	127.0.0.1	thread	thread	44	GET={mod=modcp; action=thread; fid=44; op=thread; do=list; }; POST={};
+<?PHP exit;?>	1460508600	admin	1	127.0.0.1	forum	recommend	44	GET={mod=modcp; action=forum; op=recommend; show=all; fid=44; }; POST={};
+<?PHP exit;?>	1460508610	admin	1	127.0.0.1	forum	editforum	44	GET={mod=modcp; action=forum; op=editforum; fid=44; }; POST={};
+<?PHP exit;?>	1460508612	admin	1	127.0.0.1	announcement		44	GET={mod=modcp; action=announcement; fid=44; }; POST={};
+<?PHP exit;?>	1460508731	admin	1	127.0.0.1	announcement	add		GET={mod=modcp; action=announcement; op=add; subject=双创家园上线了; starttime=2016-4-13; endtime=2016-5-13; message={0=双创家园正式上线了,欢迎大家交流吐槽; }; }; POST={subject=双创家园上线了; starttime=2016-4-13; endtime=2016-5-13; message={0=双创家园正式上线了,欢迎大家交流吐槽; }; };
+<?PHP exit;?>	1460508734	admin	1	127.0.0.1	announcement	manage		GET={mod=modcp; action=announcement; op=manage; order={}; }; POST={order={}; };
